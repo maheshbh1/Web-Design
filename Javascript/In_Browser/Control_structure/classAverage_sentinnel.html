@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Average Sentinel _Controlled </title>
+
+    <script>
+
+
+        var total; //sum
+        var gradeCounter; //number of grades entered
+        var grade; //grade typed by user
+        var gradeValue; //grade converted to integer
+        var average; //grade average
+
+        //initialization
+
+        total = 0;
+        gradeCounter = 0 ; //preparing to loop
+
+       
+       //Prompting for grade
+       grade = window.prompt("Enter integer grade: -1 to Quit");
+       gradeValue = parseInt(grade) ; //grade converted to int for calculation
+
+        //Loop 10 times
+
+        while (gradeValue != -1) {
+            total = total + gradeValue; //Sum
+            gradeCounter ++; //Increasing gradecounter
+            //Prompting for grade
+             grade = window.prompt("Enter integer grade: -1 ro Quit");
+             gradeValue = parseInt(grade) ; //grade converted to int for calculation
+
+        }
+
+        if (gradeCounter != 0) {
+            average = total/gradeCounter;
+            document.writeln("<h1> Class average is " + average + "</h1>");  //Display the average
+        } else {
+            document.writeln("<p> No grades were entered </p> ");
+        }
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

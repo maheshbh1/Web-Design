@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Parrot Chat Application</title>
+</head>
+<body>
+
+   <p>
+      <button id="connectBtn">Connect</button>
+      <button id="disconnectBtn">Disconnect</button>
+   </p>
+
+   <p>
+      Status: <span id="connectionStatus">Disconnected</span>
+   </p>
+
+   <p>
+      <input type="text" id="message">
+      <button id="sendBtn">Send</button>
+   </p>
+
+   <p>
+      Parrot's response: <strong id="response"></strong>
+   </p>
+
+   <script>
+      let connectionStatus = document.getElementById("connectionStatus");
+      let response = document.getElementById("response");
+      let messageInput = document.getElementById("message");
+      connectionStatus.innerHTML = "Disconnected";
+      let websocket = null;
+
+      document.getElementById("connectBtn").addEventListener("click", function() {
+         // User clicked Connect button
+         websocket = new WebSocket("wss://echo.websocket.events/");
+
+         websocket.addEventListener("open", function(event) {
+            // Open event callback
+            connectionStatus.innerHTML = "Connected";
+         });
+
+         websocket.addEventListener("close", function(event) {
+            // Close event callback
+            connectionStatus.innerHTML = "Disconnected";
+         });
+
+         websocket.addEventListener("message", function(event) {
+            // Message event callback
+            response.innerHTML = event.data;
+         });
+
+         websocket.addEventListener("error", function(event) {
+            // Error event callback
+            alert("Error!");
+         });
+      });
+
+      document.getElementById("disconnectBtn").addEventListener("click", function() {
+         // User clicked Disconnect button
+         if (websocket !== null) {
+            websocket.close();
+         }
+      });
+
+      document.getElementById("sendBtn").addEventListener("click", function() {
+         // User clicked Send button
+         if (websocket === null || websocket.readyState !== WebSocket.OPEN) {
+            alert("Connect before you send.");
+         }
+         else {
+            websocket.send(messageInput.value);
+         }
+      });
+   </script>
+
+</body>
+</html>

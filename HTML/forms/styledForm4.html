@@ -1,0 +1,115 @@
+<style>
+    body {
+   font-family: Arial;  
+}
+
+input[type=radio] + label {
+   cursor: pointer;
+   font-size: 1.3em;
+}
+
+input[type=radio] { 
+   appearance: none;
+   margin: 0;
+}
+
+input[type=radio] + label::before {
+   content: "\00a0";   /* Non-breaking space */
+   border-radius: 10px;
+   display: inline-block; 
+   width: 16px;
+   height: 16px;  
+   text-align: center;
+   line-height: 1em;
+   font-size: 0.8em; 
+   margin-right: 10px;
+   border: 0.125em solid white;   /* Push focus shadow away */
+   background-color: #aaa;
+}
+
+input[type=radio]:checked + label::before {
+   content: "\2022";
+   color: #fff;
+   background: green;
+}
+
+input[type=radio]:focus + label::before {
+   box-shadow: 0 0 0 1px gray;
+}
+
+fieldset {
+   border-radius: 10px;
+   margin-bottom: 15px;
+}
+
+
+input[type=checkbox] + label {
+   cursor: pointer;
+   font-size: 1.3em;
+}
+
+input[type=checkbox] {
+   appearance: none;
+   margin: 0;
+}
+
+input[type=checkbox] + label::before {
+   content: "\00a0";   /* Non-breaking space */
+   display: inline-block; 
+   width: 16px;
+   height: 16px;
+   text-align: center;
+   line-height: 1em;
+   font-size: 0.8em; 
+   margin-right: 10px;
+   border: 0.125em solid white;   /* Push focus shadow away */
+   background-color: #aaa;
+}
+
+input[type=checkbox]:checked + label::before {
+   content: "\2713";  /* Checkmark */
+   color: white;
+   background: green;      
+}
+
+input[type=checkbox]:focus + label::before {
+   box-shadow: 0 0 0 1px gray;
+}
+</style>
+
+<fieldset>
+    <legend>Size:</legend>
+    <div>
+       <input id="small" type="radio" name="size" value="small">
+       <label for="small">Small</label>
+    </div>
+    <div>
+       <input id="medium" type="radio" name="size" value="medium">
+       <label for="medium">Medium</label>
+    </div>
+    <div>
+       <input id="large" type="radio" name="size" value="large">
+       <label for="large">Large</label>
+    </div>
+ </fieldset>
+ 
+ <fieldset>
+    <legend>Flavors:</legend>
+    <div>
+       <input id="raspberry" type="checkbox" name="flavor" value="chocolate">
+       <label for="raspberry">Raspberry</label>
+    </div>
+    <div>
+       <input id="grape" type="checkbox" name="flavor" value="grape">
+       <label for="grape">Grape</label>
+    </div>
+    <div>
+       <input id="cherry" type="checkbox" name="flavor" value="cherry">
+       <label for="cherry">Cherry</label>
+    </div>
+    <div>
+       <input id="root-beer" type="checkbox" name="flavor" value="rootbeer">
+       <label for="root-beer">Root Beer</label>
+    </div>
+ </fieldset>
+ 

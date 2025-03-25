@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shifted and scaled random numbers</title>
+    <style type="text/css">
+        table {
+            width:50%;
+            border: 1px solid gray;
+            text-align: center;
+        }
+    </style>
+    <script>
+        var value;
+        document.write("<table>");
+        document.writeln("<caption>Random Numbers </caption>");
+
+        for (var i =1; i<=20; i++) {
+            value = Math.floor(1 + Math.random() * 6);
+            document.writeln("<td>" + value + "</td>");
+
+            if(i %5 ==0 && i!=20) {
+                document.writeln("<tr><tr>");
+            }
+        }
+
+        document.writeln("</tr></table>");
+        
+    </script>
+</head>
+<script>
+    
+</script>
+<body>
+    
+</body>
+</html>

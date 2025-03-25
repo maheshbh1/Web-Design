@@ -1,0 +1,22 @@
+<style>
+    #smiley {
+   color: red;
+   font-size: 50pt;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   animation-name: move;
+   animation-duration: 3s;
+}
+
+@keyframes move {
+   0%   { color:red; left:0px; top:0px; }
+   25%  { color: yellow; right: 200px; bottom: 100px; }
+   50%  { color:blue; left:200px; top:0px; }
+   75%  { color: green; left:0px; top:100px;}
+   100% { color:red; left:0px; top:0px; }
+}
+
+</style>
+
+<div id="smiley">&#9786;</div>

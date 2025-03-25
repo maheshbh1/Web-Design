@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var year ;
+        var amount;
+        var rate ;
+        var principal ;
+
+        //Input
+        year = parseInt(window.prompt("Enter the number of years"));
+        rate = parseFloat(window.prompt("Enter the rate "));
+        principal = parseFloat(window.prompt("Enter the principal "));
+
+
+        //Calculating amount
+        amount = principal * Math.pow(1.0 + rate, year);
+
+
+        //Output
+        document.writeln("<h2>The amount is " + amount.toFixed(2) + "</h2>");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,10 @@
+li {
+    color: blue;
+ }
+ 
+ .footnote { text-decoration:"underline";}
+ 
+ #footnote-1 {
+    color: orange;
+    font-style:italic;
+ }

@@ -1,0 +1,56 @@
+<style>
+    #welcome {
+   margin: 20px;
+   font: 20pt arial;
+   text-align: center;
+   animation: spin 1s linear;
+
+}
+
+
+@keyframes spin {
+   0%   { transform: translate(-300px); } 
+   50%  { transform: translate(60px); } 
+   100% { transform: translate(0px) }
+}
+
+@keyframes wiggle {
+   0%   { transform: rotate(0); }  
+   25%  { transform: rotate(3deg); }  
+   75%  { transform: rotate(-3deg); }
+   100% { transform: rotate(0); }
+}
+
+.button {
+   margin: auto;
+   text-align: center;
+   vertical-align: middle;
+   width: 300px;
+   height: 60px; 
+   line-height: 60px;   
+   font: bold 28pt/150% arial;
+   border: solid 2px red;
+   box-shadow: 2px 2px 3px;
+   border-radius: 10px;   
+   background: radial-gradient(white, #bbb);
+   transition: all 100ms ease-in-out;   
+   animation: wiggle 200ms linear 1s 2 reverse;
+}
+
+.button:hover {
+   transform: scale(1.05) ;
+   color: red;  
+   cursor: pointer;
+}
+
+
+.button:active {
+   transform: scale(0.95);
+   background: radial-gradient(#ddd, #999);
+}
+
+</style>
+
+<div id="welcome">Enter the exciting world of fantasy sports!</div>
+<div class="button">Play Now!</div>
+

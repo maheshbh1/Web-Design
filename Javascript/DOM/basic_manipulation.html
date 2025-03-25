@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Manipulation</title>
+</head>
+<body>
+    <h1>
+        This is my site!
+    </h1>
+    
+    <div id="content">
+       <button id = "the-button" onclick="removeButton()"> Click to remove me! </button>
+    </div>
+
+    <p>         Welcome to my website. 
+
+
+    </p>
+    <script>
+       
+       setTimeout(function() {
+            let heading = document.querySelector('h1');
+            heading.textContent = 'Hello from Javascript';
+
+
+            let container = document.querySelector('#content');
+            let newPara =document.createElement('p');
+            newPara.textContent = 'Hello, I am a para. ' ;
+            container.appendChild(newPara);
+
+            
+
+        }, 1000);
+
+        function removeButton() {
+            let button = document.querySelector('#the-button');
+            button.remove();
+
+        }
+
+       
+
+
+    </script>
+</body>
+</html>

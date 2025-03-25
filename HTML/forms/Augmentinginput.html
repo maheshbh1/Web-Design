@@ -1,0 +1,81 @@
+<style>
+
+input:invalid {
+   border: 2px solid red;
+}
+
+input[type=text]:focus, input[type=email]:focus {
+   background-color: lightblue;  
+}
+
+input[type=search] {
+   float: right;
+   background-image: url("https://resources.zybooks.com/WebProgramming/searchiconv1.png");  
+   background-position: 5px 5px; 
+   background-repeat: no-repeat;
+   padding-left: 40px;
+}
+
+label {
+   display: block;
+}
+
+input[type=text], input[type=email], input[type=search], select {
+   box-sizing: border-box;
+   width: 250px;
+   padding: 8px;
+   margin-top: 4px;
+   border: 1px solid #aaa;
+   border-radius: 4px;
+}
+
+input[type=search] {
+   float: right;
+}
+
+input[type=submit] {
+   width: 250px;
+   color: white;
+   background-color: #09f;
+   padding: 15px;
+   margin: 10px 0;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+}
+
+input[type=submit]:hover {
+   background-color: #07d;
+}
+
+form {
+   font: 13px Arial;
+   background-color: #eee;
+   padding: 10px;
+   width: 250px;
+}
+
+</style>
+
+<input type="search" placeholder="Search">
+
+<form action="https://wp.zybooks.com/form-viewer.php" target="_blank" method="GET">
+   <p>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="fullname">
+   </p>
+   <p>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" value="dara">
+   </p>
+   <p>
+      <label for="service">Service</label>
+      <select id="service" name="service">
+        <option>Basic</option>
+        <option>Prime</option>
+        <option>Deluxe</option>        
+      </select>
+   </p>
+  
+   <input type="submit" value="Register">
+</form>

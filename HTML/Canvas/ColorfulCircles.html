@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Colorful Circles</title>
+</head>
+<body>
+
+   <canvas id="myCanvas" width="100" height="260" style="border: 2px solid black"></canvas>
+
+   <script>
+      let canvas = document.getElementById("myCanvas");
+      let context = canvas.getContext("2d");
+
+      // Draw red circle
+      context.beginPath();
+      context.arc(50, 50, 30, 0, 2 * Math.PI);
+      context.fillStyle = "red";
+      context.fill();
+
+      // Draw yellow circle
+      context.beginPath();
+      context.translate(0, 80);
+      context.arc(50, 50, 30, 0, 2 * Math.PI);
+      context.fillStyle = "yellow";
+      context.fill();
+
+      // Draw green circle
+      context.beginPath();
+      context.translate(0, 80);
+      context.arc(50, 50, 30, 0, 2 * Math.PI);
+      context.fillStyle = "green";
+      context.fill();
+   </script>
+
+</body>
+</html>

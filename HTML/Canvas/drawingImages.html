@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playing Cards</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="410" height="270" style="border: 1px solid gray"></canvas>
+
+<div style="display:none;">
+    <img src="https://resources.zybooks.com/WebProgramming/heartsv1.png" id="hearts" alt="Heart">
+    <img src="https://resources.zybooks.com/WebProgramming/clubsv1.png" id="clubs" alt="Clubs">
+    <img src="https://resources.zybooks.com/WebProgramming/diamondsv1.png" id="diamonds" alt="Diamonds">
+    <img src="https://resources.zybooks.com/WebProgramming/spadesv1.png" id="spades" alt="Spades">
+</div>
+
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let context = canvas.getContext("2d");
+
+    const cardWidth = 80;
+    const cardHeight = 100;
+    const suits = ["hearts", "diamonds", "clubs", "spades"];
+
+    // Assign suit images to suitImages array
+    let suitImages = [];
+    for (let i = 0; i < suits.length; i++) {
+        suitImages[i] = document.getElementById(suits[i]);
+    }
+
+    // Draw cards after images have finished loading
+    window.addEventListener("load", drawCards);
+
+    function drawCards() {
+        // Diagonal gradient for the background
+        let gradient = context.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, "lightgreen");
+        gradient.addColorStop(1, "limegreen");
+        context.fillStyle = gradient;
+        context.fillRect(0, 0, canvas.width, canvas.height);
+
+        let ranks = ["A", 2, 3, 4, 5, 6, 7, 8, 9, 10, "J", "Q", "K"];
+
+        // Display some cards
+        for (let i = 0; i < ranks.length; i++) {
+            let randomRank = Math.floor(Math.random() * 4);
+            drawCard(20 * i + 10, 10 * i + 10, ranks[i], randomRank);
+        }
+
+        // Display a message
+        context.font = "bold 16pt Arial";
+        context.textBaseline = "top";
+        context.textAlign = "center";
+        context.fillStyle = "indigo";
+        context.fillText("Let's play cards!", 310, 35);
+    }
+
+    function drawCard(x, y, rank, suit) {
+        // Font properties
+        context.font = "bold 10pt Arial";
+        context.textAlign = "center";
+
+        // Card with a shadow
+        context.shadowBlur = 10;
+        context.shadowOffsetX = 2;
+        context.shadowOffsetY = 2;
+        context.shadowColor = "black";
+        context.fillStyle = "white";
+        context.fillRect(x, y, cardWidth, cardHeight);
+
+        // Turn off shadows
+        context.shadowBlur = 0;
+        context.shadowOffsetX = 0;
+        context.shadowOffsetY = 0;
+
+        // Top-left
+        if (suit === 2 || suit === 3) {
+            context.fillStyle = "black";
+        } else {
+            context.fillStyle = "red";
+        }
+        context.fillText(rank, x + 9, y + 16);
+        context.drawImage(suitImages[suit], x + 4, y + 20, 10, 10);
+
+        // Bottom-right
+        context.fillText(rank, x + cardWidth - 10, y + cardHeight - 18);
+        context.drawImage(suitImages[suit], x + cardWidth - 15, y + cardHeight - 13, 10, 10);
+
+        // Draw the suit in the center of the card
+        let cardX = x + (cardWidth - suitImages[suit].width) / 2;
+        let cardY = y + (cardHeight - suitImages[suit].height) / 2;
+        context.drawImage(suitImages[suit], cardX, cardY);
+    }
+</script>
+
+</body>
+</html>
