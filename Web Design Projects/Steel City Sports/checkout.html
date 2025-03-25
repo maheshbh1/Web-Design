@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title>Checkout</title>
+</head>
+<body>
+  <div class="dropdown" id="myTopnav">
+    <button class="dropbtn">Menu</button>
+    <div class="dropdown-content">
+
+    <img src="steel.png" alt="steel-city" />
+    <a class="active" href="#home">Home</a>
+    <a href="steelers.html">Pittsburgh Steelers</a>
+    <a href="Pirates.html">Pittsburgh Pirates</a>
+    <a href="penguins.html">Pittsburgh Penguins</a>
+    <a href="riverhounds.html">Pittsburgh RiverHounds</a>
+    <a href="checkout.html"><img src="cart.png" alt="steel-city" /></a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      &#9776;
+    </a>
+  </div>
+
+  <div style="padding-left: 16px">
+  <center> 
+    <h2>Shopping Cart</h2>     <img src="cart.png" alt="steel-city" /> 
+    <table>
+      <tr>
+        <th>Cart</th>
+        <th>Description</th>
+        <th>Size</th>
+        <th>Item Price</th>
+        <th>QTY</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td><img src="image/TJCR.png" alt="steelersJersey"></td>
+        <td>Men’s Pittsburgh Steelers TJ Watt Nike Color Rush Jersey</td>
+        <td>M</td>
+        <td>$169.99</td>
+        <td>1</td>
+        <td>$169.99</td>
+      </tr>
+      <tr>
+        <td><img src="image/SidneyHome.png" alt="penguinsJersey"></td>
+        <td>Men’s Pittsburgh Penguins Sidney Crosby Nike Home Jersey</td>
+        <td>M</td>
+        <td>$174.99</td>
+        <td>1</td>
+        <td>$174.99</td>
+      </tr>
+      <tr>
+        <td><img src="image/McCutchenHome.png" alt="piratesJersey"></td>
+        <td>Men’s Pittsburgh Pirates Andrew McCuthen Nike Home Jersey</td>
+        <td>M</td>
+        <td>$134.99</td>
+        <td>1</td>
+        <td>$134.99</td>
+      </tr>
+      <tr>
+        <td><img src="image/RiverHoundHome.png" alt="riverhoundsJersey"></td>
+        <td>Men’s Pittsburgh Riverhounds Nike Home Jersey</td>
+        <td>M</td>
+        <td>$89.99</td>
+        <td>1</td>
+        <td>$89.99</td>
+      </tr>
+      <tr>
+        <td colspan="5" style="text-align:right">Total:</td>
+        <td>$569.96</td>
+      </tr>
+    </table>
+
+
+  </div>
+
+  <div id="checkout-button">
+    <a href="payment.html">Payment</a>
+  </div>
+
+</div>
+
+</center>
+
+
+<script>
+  function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "dropdown") {
+      x.className += " responsive";
+    } else {
+      x.className = "dropdown";
+    }
+  }
+</script>
+</body>
+</html>

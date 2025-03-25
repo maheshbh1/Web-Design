@@ -1,0 +1,235 @@
+/* styles.css */
+
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 20px; /* Add some padding to the top of the body */
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Add this CSS rule to adjust the size of the checkout image */
+#myTopnav img {
+  max-width: 100px; /* Adjust the maximum width as needed */
+  height: auto;
+}
+
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4caf50;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {
+    position: relative;
+  }
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+h2,
+h3 {
+  margin-top: 20px; /* Add margin to create space between paragraphs and headings */
+}
+
+pre {
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+img {
+  margin-bottom: 20px; /* Add margin at the bottom */
+  width: 200px;
+  height: auto;
+}
+
+/* Additional style for the welcome message */
+#welcome-message {
+  text-align: center;
+}
+
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .topnav {
+    overflow: hidden;
+    background-color: black;
+  }
+  
+  .topnav img {
+    float: left;
+    width: 100px; /* Adjust the width as needed */
+    height: 100px; /* Adjust the height as needed */
+    margin-right: 10px; /* Adjust the margin as needed */
+  }
+  
+  .topnav a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: inline-block; /* Ensure each link is on a new line */
+  }
+  
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .topnav a:hover {
+    background-color: #ddd;
+    color: teal;
+  }
+  
+
+  .topnav a.active {
+    background-color: yellow;
+    color: teal;
+  }
+  
+  pre{
+    font-family: inherit;
+  }
+
+
+  /* Drop down */
+/* Add styles here as needed */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+
+  /*  Table formatting  */
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+
+  th, td {
+    padding: 1px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: lightblue;
+  }
+
+  tr:nth-child(even) {
+    background-color: lightgrey;
+  }
+
+  /* Adjust column widths */
+  td:nth-child(1), th:nth-child(1) {
+    width: 10%;
+  }
+
+  td:nth-child(2), th:nth-child(2) {
+    width: 40%;
+  }
+
+  td:nth-child(3), th:nth-child(3) {
+    width: 10%;
+  }
+
+  td:nth-child(4), th:nth-child(4) {
+    width: 15%;
+  }
+
+  td:nth-child(5), th:nth-child(5) {
+    width: 5%;
+  }
+
+  td:nth-child(6), th:nth-child(6) {
+    width: 20%;
+  }
+
+
+  /*checkout button styles */
+
+  #checkout-button {
+    text-align: center;
+  }
+
+  #checkout-button a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: red;
+    color: white;
+    border-radius: 5px;
+  }
+
+  #checkout-button a:hover {
+    background-color: gold;
+  }
